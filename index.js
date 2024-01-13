@@ -6,7 +6,7 @@ const Daftar = require('./daftar');
     const page = await browser.newPage();
 
     await page.setViewport({ width: 1080, height: 1024 });
-    await page.goto('https://www.jobstreet.co.id/id/react-native-jobs', { waitUntil: 'networkidle2' });
+    await page.goto('https://www.jobstreet.co.id/id/gudang-admin-jobs', { waitUntil: 'networkidle2' });
 
     const parentClassSelector = '._1wkzzau0.szurmz0.szurmz4';
 

@@ -9,7 +9,7 @@ async function Daftar() {
 
     try {
         const browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             userDataDir: chromeExecutablePath,
             ignoreDefaultArgs: ['--disable-extensions'],
             args: ['--profile-directory=Default']
@@ -25,7 +25,7 @@ async function Daftar() {
         const buttonSelector4 = "#app > div > div._1q6sw320._16awye68e > div._1q6sw320._16awye69y._16awye69r._16awye68u._16awye68n > div > div > div:nth-child(2) > div > div > div:nth-child(6) > div > div:nth-child(2) > div > div > div > button"
         for (let jobData of data) {
             if (jobData && jobData.Link) {
-                console.log('Navigating to:', jobData.Link);
+                // console.log('Navigating to:', jobData.Link);
                 const match = jobData.Link.match(/\/(\d+)?\?/);
                 const jobId = match ? match[1] : null;
                 try {
@@ -43,10 +43,10 @@ async function Daftar() {
 
                     await page.waitForSelector(buttonSelector4, { visible: true, timeout: 3000 });
                     await page.click(buttonSelector4);
-                    console.log("Sukses");
+                    console.log("Sukses melamar di" + " " + jobData.PT +" "+ "(" + jobData.Job + ")" + "\n" + jobData.Link);
 
                 } catch (e) {
-                    console.error('Failed to load:', jobData.Link, e);
+                    console.log("Data ada yang kurang silahkan daftar manual" + " " + jobData.PT +" "+ "(" + jobData.Job + ")" + "\n" + jobData.Link);
                 }
             }
         }

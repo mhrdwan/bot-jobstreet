@@ -32,16 +32,16 @@ async function Daftar() {
                     await page.setViewport({ width: 1080, height: 1024 });
                     await page.goto(`https://www.jobstreet.co.id/id/job/${jobId}/apply`, { waitUntil: 'load' });
 
-                    await page.waitForSelector(buttonSelector, { visible: true });
+                    await page.waitForSelector(buttonSelector, { visible: true, timeout: 3000 });
                     await page.click(buttonSelector);
 
-                    await page.waitForSelector(buttonSelector2, { visible: true });
+                    await page.waitForSelector(buttonSelector2, { visible: true, timeout: 3000 });
                     await page.click(buttonSelector2);
 
-                    await page.waitForSelector(buttonSelector3, { visible: true });
+                    await page.waitForSelector(buttonSelector3, { visible: true, timeout: 3000 });
                     await page.click(buttonSelector3);
 
-                    await page.waitForSelector(buttonSelector4, { visible: true });
+                    await page.waitForSelector(buttonSelector4, { visible: true, timeout: 3000 });
                     await page.click(buttonSelector4);
                     console.log("Sukses");
 
@@ -51,10 +51,9 @@ async function Daftar() {
             }
         }
 
-        // await browser.close();
+        await browser.close();
     } catch (error) {
         console.error("An error occurred:", error);
     }
 }
-
-Daftar();
+module.exports = Daftar;

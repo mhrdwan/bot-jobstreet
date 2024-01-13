@@ -1,11 +1,12 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const Daftar = require('./daftar');
 (async () => {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
     await page.setViewport({ width: 1080, height: 1024 });
-    await page.goto('https://www.jobstreet.co.id/id/web-developer-jobs', { waitUntil: 'networkidle2' });
+    await page.goto('https://www.jobstreet.co.id/id/react-native-jobs', { waitUntil: 'networkidle2' });
 
     const parentClassSelector = '._1wkzzau0.szurmz0.szurmz4';
 
@@ -32,4 +33,6 @@ const fs = require('fs');
     });
     console.log('sukses')
     await browser.close();
+    console.log(`Menjalankan function daftar`);
+    await Daftar()
 })();

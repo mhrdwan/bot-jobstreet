@@ -4,12 +4,11 @@ Deskripsi singkat proyek disini.
 
 ## Cara Install
 
-Ikuti langkah-langkah berikut untuk menginstall proyek ini.
 
 1. Clone repositori :
 
     ```bash
-    git clone https://github.com/username/nama-proyek.git](https://github.com/mhrdwan/bot-jobstreet
+    git clone https://github.com/mhrdwan/bot-jobstreet
     ```
 
 2. Masuk ke direktori proyek:
